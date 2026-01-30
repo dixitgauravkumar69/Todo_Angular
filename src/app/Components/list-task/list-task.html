@@ -1,0 +1,34 @@
+<div class="task-list-wrapper">
+
+  <h2>My Todo List</h2>
+
+  <div *ngIf="tasks.length === 0" class="empty-state">
+    No tasks available. Add some todos 🚀
+  </div>
+
+  <div class="task-card" *ngFor="let task of tasks; let i = index">
+
+    <div class="task-info">
+      <h3 [class.completed]="task.completed">
+        {{ task.title }}
+      </h3>
+      <p>{{ task.description }}</p>
+
+      <span class="priority" [ngClass]="task.priority.toLowerCase()">
+        {{ task.priority }}
+      </span>
+    </div>
+
+    <div class="task-actions">
+      <button class="status-btn" (click)="toggleStatus(i)">
+        {{ task.completed ? 'Undo' : 'Done' }}
+      </button>
+
+      <button class="delete-btn" (click)="deleteTask(i)">
+        Delete
+      </button>
+    </div>
+
+  </div>
+
+</div>

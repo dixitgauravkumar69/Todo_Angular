@@ -1,0 +1,61 @@
+<div class="todo-form-wrapper">
+  <h2>Create Todo</h2>
+
+  <form class="todo-form" [formGroup]="todoForm" (ngSubmit)="submitTodo()">
+
+    <!-- Title -->
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        type="text"
+        placeholder="Enter todo title"
+        formControlName="title"
+      />
+      <small *ngIf="todoForm.get('title')?.touched && todoForm.get('title')?.invalid">
+        Title is required
+      </small>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label>Description</label>
+      <textarea
+        rows="4"
+        placeholder="Enter todo description"
+        formControlName="description"
+      ></textarea>
+      <small *ngIf="todoForm.get('description')?.touched && todoForm.get('description')?.invalid">
+        Description is required
+      </small>
+    </div>
+
+    <!-- Status & Priority -->
+    <div class="form-row">
+
+      <!-- Status -->
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" formControlName="completed" />
+          Mark as Completed
+        </label>
+      </div>
+
+      <!-- Priority -->
+      <div class="form-group">
+        <label>Priority</label>
+        <select formControlName="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="submit-btn">
+      Save Todo
+    </button>
+
+  </form>
+</div>

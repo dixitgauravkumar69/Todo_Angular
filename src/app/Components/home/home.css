@@ -1,0 +1,73 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Page background */
+body {
+  background: #f4f6f8;
+}
+
+/* Main container */
+.todo-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Header */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+}
+
+.todo-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Buttons wrapper */
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Buttons */
+.actions button {
+  padding: 8px 16px;
+  background: #ffffff;
+  color: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.actions button:hover {
+  background: #eef2ff;
+  transform: translateY(-1px);
+}
+
+/* Active route button (optional) */
+.actions button.router-link-active {
+  background: #e0e7ff;
+  font-weight: 600;
+}
+
+/* Content area */
+.todo-content {
+  padding: 24px;
+  min-height: 300px;
+}
