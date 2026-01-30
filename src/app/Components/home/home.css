@@ -1,4 +1,6 @@
-/* Base reset */
+/* ===============================
+   Base reset
+================================ */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +11,12 @@
 /* Page background */
 body {
   background: #f4f6f8;
+  padding: 10px;
 }
 
-/* Main container */
+/* ===============================
+   Main container
+================================ */
 .todo-container {
   max-width: 900px;
   margin: 40px auto;
@@ -21,7 +26,9 @@ body {
   overflow: hidden;
 }
 
-/* Header */
+/* ===============================
+   Header
+================================ */
 .todo-header {
   display: flex;
   justify-content: space-between;
@@ -36,7 +43,9 @@ body {
   font-weight: 600;
 }
 
-/* Buttons wrapper */
+/* ===============================
+   Buttons wrapper
+================================ */
 .actions {
   display: flex;
   gap: 12px;
@@ -60,14 +69,79 @@ body {
   transform: translateY(-1px);
 }
 
-/* Active route button (optional) */
+/* Active route button */
 .actions button.router-link-active {
   background: #e0e7ff;
   font-weight: 600;
 }
 
-/* Content area */
+/* ===============================
+   Content area
+================================ */
 .todo-content {
   padding: 24px;
   min-height: 300px;
+}
+
+/* ===============================
+   Mobile Responsive
+================================ */
+@media (max-width: 768px) {
+  .todo-container {
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+
+  .todo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .todo-header h1 {
+    font-size: 20px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .actions button {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .todo-content {
+    padding: 16px;
+  }
+}
+
+/* ===============================
+   Extra Small Devices (Phones)
+================================ */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+
+  .todo-header h1 {
+    font-size: 18px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actions button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .todo-content {
+    padding: 14px;
+  }
 }
